@@ -10,12 +10,10 @@ const PAD_SPEED = 250
 
 
 func _ready():
-	outLabel = get_node("out")
 	screenSize = get_viewport_rect().size
 	padSize = get_node("left").get_texture().get_size()
 	set_process(true)
-	# outLabel.set_text("Hallo")
-
+	
 
 func _process(delta):
 	moveLeftPad(delta)
@@ -29,7 +27,7 @@ func moveLeftPad(delta):
 		leftPos.y -= PAD_SPEED*delta
 		get_node("left").set_pos(leftPos)
 		
-	if (leftPos.y < screenSize.y and Input.is_action_pressed("leftMoveDown")):
+	elif (leftPos.y < screenSize.y and Input.is_action_pressed("leftMoveDown")):
         leftPos.y += PAD_SPEED*delta
         get_node("left").set_pos(leftPos)
 
