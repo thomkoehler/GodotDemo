@@ -15,7 +15,7 @@ func _draw():
 	
 func _input_event(ev):
 	if(ev.type == InputEvent.MOUSE_BUTTON and ev.pressed):
-		tapped = true
+		tapped = !tapped
 		
 		update()
 
